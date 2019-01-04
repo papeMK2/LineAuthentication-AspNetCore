@@ -327,3 +327,4 @@ ASALocalRun/
 
 # Development Environment Config
 appsettings.Development.json
+appsettings.json
