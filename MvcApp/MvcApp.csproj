@@ -12,11 +12,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Identity.LineAccountExtension\Identity.LineAccountExtension.csproj" />
+    <Folder Include="Areas\Identity\Services\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Identity\Services\" />
+    <ProjectReference Include="..\Identity.LineAccountExtension\LineAccountExtension.csproj" />
   </ItemGroup>
 
 </Project>

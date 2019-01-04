@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Identity.LineAccountExtension
+namespace LineAccountExtension
 {
     public static class LineAccountDefault
     {

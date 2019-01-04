@@ -13,7 +13,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json.Linq;
 
-namespace Identity.LineAccountExtension
+namespace LineAccountExtension
 {
     public class LineAccountHandler : OAuthHandler<LineAccountOptions>
     {

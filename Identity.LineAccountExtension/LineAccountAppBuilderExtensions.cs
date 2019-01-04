@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Identity.LineAccountExtension
+namespace LineAccountExtension
 {
     public static class LineAccountAppBuilderExtensions
     {

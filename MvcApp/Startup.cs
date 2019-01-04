@@ -12,7 +12,8 @@ using Microsoft.EntityFrameworkCore;
 using MvcApp.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Identity.LineAccountExtension;
+using LineAccountExtension;
+using MvcApp.Models;
 
 namespace MvcApp
 {
@@ -44,13 +45,13 @@ namespace MvcApp
             services.AddAuthentication()
                 .AddTwitter(options =>
                 {
-                    options.ConsumerKey = Configuration["TwitterKey"];
-                    options.ConsumerSecret = Configuration["TwitterSecret"];
+                    options.ConsumerKey = Configuration["Authentication:Twitter:ConsumerKey"];
+                    options.ConsumerSecret = Configuration["Authentication:Twitter:ConsumerSecret"]; ;
                 })
                 .AddLineAccount(options =>
                 {
-                    options.AppId = Configuration["LineAppId"];
-                    options.AppSecret = Configuration["LineAppSecret"];
+                    options.AppId = Configuration["Authentication:Line:AppId"];
+                    options.AppSecret = Configuration["Authentication:Line:AppSecret"]; ;
                 });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);

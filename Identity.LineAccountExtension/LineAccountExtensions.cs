@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using System;
 
-namespace Identity.LineAccountExtension
+namespace LineAccountExtension
 {
     public static class LineAccountExtensions
     {

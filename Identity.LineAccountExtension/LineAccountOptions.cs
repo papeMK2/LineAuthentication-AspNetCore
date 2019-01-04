@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Security.Claims;
 using System.Text;
 
-namespace Identity.LineAccountExtension
+namespace LineAccountExtension
 {
     public class LineAccountOptions : OAuthOptions
     {
