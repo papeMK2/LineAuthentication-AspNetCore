@@ -25,12 +25,12 @@ namespace LineAccountExtension
             request.Headers.Authorization = new("Bearer", tokens.AccessToken);
 
             var response = await Backchannel.SendAsync(request, Context.RequestAborted).ConfigureAwait(false);
-            var json = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-            var payload = JObject.Parse(json);
+            var payload = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
-            var context = new OAuthCreatingTicketContext(new ClaimsPrincipal(identity), properties, Context, Scheme, Options, Backchannel, tokens, payload);
+            var user = JObject.Parse(payload);
+            var principal = new ClaimsPrincipal(identity);
+            var context = new OAuthCreatingTicketContext(principal, properties, Context, Scheme, Options, Backchannel, tokens, user);
             context.RunClaimActions();
-
             return new(context.Principal, context.Properties, Scheme.Name);
         }
 
