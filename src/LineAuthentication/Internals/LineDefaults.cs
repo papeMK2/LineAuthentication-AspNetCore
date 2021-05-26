@@ -20,7 +20,6 @@
         /// <summary>
         /// The default endpoint used to perform LINE authentication.
         /// </summary>
-        /// <remarks>
         public const string AuthorizationEndpoint = "https://access.line.me/oauth2/v2.1/authorize";
 
 
