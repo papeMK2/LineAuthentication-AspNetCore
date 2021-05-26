@@ -1,6 +1,6 @@
 ﻿namespace LineAccountExtension
 {
-    internal static class LineAccountDefault
+    internal static class LineAuthenticationConstants
     {
         public const string AuthenticationScheme = "Line";
         public const string DisplayName = "Line";

@@ -10,9 +10,9 @@ namespace LineAccountExtension
         public LineAccountOptions()
         {
             CallbackPath = new PathString("/signin-line");
-            AuthorizationEndpoint = LineAccountDefault.AuthorizationEndpoint;
-            TokenEndpoint = LineAccountDefault.TokenEndpoint;
-            UserInformationEndpoint = LineAccountDefault.UserInformationEndpoint;
+            AuthorizationEndpoint = LineAuthenticationConstants.AuthorizationEndpoint;
+            TokenEndpoint = LineAuthenticationConstants.TokenEndpoint;
+            UserInformationEndpoint = LineAuthenticationConstants.UserInformationEndpoint;
             Scope.Add("openid");
             Scope.Add("profile");
             Scope.Add("email");
