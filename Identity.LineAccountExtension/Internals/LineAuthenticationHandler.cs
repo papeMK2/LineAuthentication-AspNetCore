@@ -32,7 +32,7 @@ namespace LineAccountExtension.Internals
             var principal = new ClaimsPrincipal(identity);
             var context = new OAuthCreatingTicketContext(principal, properties, this.Context, this.Scheme, this.Options, this.Backchannel, tokens, user);
             context.RunClaimActions();
-            return new(context.Principal, context.Properties, this.Scheme.Name);
+            return new(context.Principal!, context.Properties, this.Scheme.Name);
         }
 
 
@@ -47,7 +47,7 @@ namespace LineAccountExtension.Internals
                 ["scope"] = string.Join(" ", this.Options.Scope),
                 ["state"] = state,
             };
-            return QueryHelpers.AddQueryString(this.Options.AuthorizationEndpoint, queryString);
+            return QueryHelpers.AddQueryString(this.Options.AuthorizationEndpoint, queryString!);
         }
 
 
