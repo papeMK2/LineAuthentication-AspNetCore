@@ -9,7 +9,11 @@ using Microsoft.AspNetCore.Authentication.OAuth;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+#if NETSTANDARD2_0_OR_GREATER
 using Newtonsoft.Json.Linq;
+#else
+using System.Text.Json;
+#endif
 
 namespace LineAccountExtension.Internals
 {
@@ -24,13 +28,24 @@ namespace LineAccountExtension.Internals
         {
             var request = new HttpRequestMessage(HttpMethod.Get, this.Options.UserInformationEndpoint);
             request.Headers.Authorization = new("Bearer", tokens.AccessToken);
-
             var response = await this.Backchannel.SendAsync(request, this.Context.RequestAborted).ConfigureAwait(false);
-            var payload = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
-            var user = JObject.Parse(payload);
+#if NET5_0_OR_GREATER
+            var payload = await response.Content.ReadAsStringAsync(this.Context.RequestAborted).ConfigureAwait(false);
+#else
+            var payload = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+#endif
+
             var principal = new ClaimsPrincipal(identity);
+
+#if NETSTANDARD2_0_OR_GREATER
+            var user = JObject.Parse(payload);
             var context = new OAuthCreatingTicketContext(principal, properties, this.Context, this.Scheme, this.Options, this.Backchannel, tokens, user);
+#else
+            using var json = JsonDocument.Parse(payload);
+            var context = new OAuthCreatingTicketContext(principal, properties, Context, Scheme, Options, Backchannel, tokens, json.RootElement);
+#endif
+
             context.RunClaimActions();
             return new(context.Principal!, context.Properties, this.Scheme.Name);
         }
