@@ -37,19 +37,16 @@ namespace LineAccountExtension
 
         protected override string BuildChallengeUrl(AuthenticationProperties properties, string redirectUri)
         {
-            var queryString = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
-            queryString.Add("response_type", "code");
-            queryString.Add("client_id", Options.ClientId);
-            queryString.Add("redirect_uri", redirectUri);
-
-            queryString.Add("scope", string.Join(" ", Options.Scope));
-
-
             var state = Options.StateDataFormat.Protect(properties);
-            queryString.Add("state", state);
-
-            var authorizationEndpoint = QueryHelpers.AddQueryString(Options.AuthorizationEndpoint, queryString);
-            return authorizationEndpoint;
+            var queryString = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
+            {
+                ["response_type"] = "code",
+                ["client_id"] = Options.ClientId,
+                ["redirect_uri"] = redirectUri,
+                ["scope"] = string.Join(" ", Options.Scope),
+                ["state"] = state,
+            };
+            return QueryHelpers.AddQueryString(Options.AuthorizationEndpoint, queryString);
         }
 
         protected override string FormatScope(IEnumerable<string> scopes)
