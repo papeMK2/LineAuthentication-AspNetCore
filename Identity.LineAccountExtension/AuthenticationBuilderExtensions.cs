@@ -20,6 +20,6 @@ namespace LineAccountExtension
 
 
         public static AuthenticationBuilder AddLine(this AuthenticationBuilder builder, string authenticationScheme, string displayName, Action<LineOptions> configureOptions)
-            => builder.AddOAuth<LineOptions, LineAccountHandler>(authenticationScheme, displayName, configureOptions);
+            => builder.AddOAuth<LineOptions, LineAuthenticationHandler>(authenticationScheme, displayName, configureOptions);
     }
 }
