@@ -5,9 +5,9 @@ using Microsoft.AspNetCore.Authentication.OAuth;
 
 namespace LineAccountExtension
 {
-    public class LineAccountOptions : OAuthOptions
+    public class LineOptions : OAuthOptions
     {
-        public LineAccountOptions()
+        public LineOptions()
         {
             this.CallbackPath = new("/signin-line");
             this.AuthorizationEndpoint = LineAuthenticationConstants.AuthorizationEndpoint;

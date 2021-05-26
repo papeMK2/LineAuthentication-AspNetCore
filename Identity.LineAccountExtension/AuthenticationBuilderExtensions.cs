@@ -11,15 +11,15 @@ namespace LineAccountExtension
             => AddLineAccount(builder, static _ => { });
 
 
-        public static AuthenticationBuilder AddLineAccount(this AuthenticationBuilder builder, Action<LineAccountOptions> configureOptions)
+        public static AuthenticationBuilder AddLineAccount(this AuthenticationBuilder builder, Action<LineOptions> configureOptions)
             => AddLineAccount(builder, LineAuthenticationConstants.AuthenticationScheme, configureOptions);
 
 
-        public static AuthenticationBuilder AddLineAccount(this AuthenticationBuilder builder, string authenticationScheme, Action<LineAccountOptions> configureOptions)
+        public static AuthenticationBuilder AddLineAccount(this AuthenticationBuilder builder, string authenticationScheme, Action<LineOptions> configureOptions)
             => AddLineAccount(builder, authenticationScheme, LineAuthenticationConstants.DisplayName, configureOptions);
 
 
-        public static AuthenticationBuilder AddLineAccount(this AuthenticationBuilder builder, string authenticationScheme, string displayName, Action<LineAccountOptions> configureOptions)
-            => builder.AddOAuth<LineAccountOptions, LineAccountHandler>(authenticationScheme, displayName, configureOptions);
+        public static AuthenticationBuilder AddLineAccount(this AuthenticationBuilder builder, string authenticationScheme, string displayName, Action<LineOptions> configureOptions)
+            => builder.AddOAuth<LineOptions, LineAccountHandler>(authenticationScheme, displayName, configureOptions);
     }
 }

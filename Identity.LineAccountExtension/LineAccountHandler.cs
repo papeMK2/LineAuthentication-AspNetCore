@@ -13,9 +13,9 @@ using Newtonsoft.Json.Linq;
 
 namespace LineAccountExtension
 {
-    public class LineAccountHandler : OAuthHandler<LineAccountOptions>
+    public class LineAccountHandler : OAuthHandler<LineOptions>
     {
-        public LineAccountHandler(IOptionsMonitor<LineAccountOptions> options, ILoggerFactory logger, UrlEncoder encoder, ISystemClock clock)
+        public LineAccountHandler(IOptionsMonitor<LineOptions> options, ILoggerFactory logger, UrlEncoder encoder, ISystemClock clock)
             : base(options, logger, encoder, clock)
         { }
 
