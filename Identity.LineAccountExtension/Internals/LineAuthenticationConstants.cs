@@ -1,4 +1,4 @@
-﻿namespace LineAccountExtension
+﻿namespace LineAccountExtension.Internals
 {
     internal static class LineAuthenticationConstants
     {

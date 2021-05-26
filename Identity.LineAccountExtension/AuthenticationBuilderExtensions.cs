@@ -1,4 +1,5 @@
 ﻿using System;
+using LineAccountExtension.Internals;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.Extensions.DependencyInjection;
 
