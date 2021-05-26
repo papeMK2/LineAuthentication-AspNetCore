@@ -48,7 +48,7 @@ namespace MvcApp
                     options.ConsumerKey = Configuration["Authentication:Twitter:ConsumerKey"];
                     options.ConsumerSecret = Configuration["Authentication:Twitter:ConsumerSecret"]; ;
                 })
-                .AddLineAccount(options =>
+                .AddLine(options =>
                 {
                     options.AppId = Configuration["Authentication:Line:AppId"];
                     options.AppSecret = Configuration["Authentication:Line:AppSecret"]; ;
