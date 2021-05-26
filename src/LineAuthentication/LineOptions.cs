@@ -31,6 +31,10 @@ namespace LineAuthentication
         }
 
 
+        /// <summary>
+        /// Gets or sets the provider-assigned application id.
+        /// </summary>
+        /// <remarks>This property is an alias of <see cref="OAuthOptions.ClientId"/>.</remarks>
         public string AppId
         {
             get => this.ClientId;
@@ -38,6 +42,10 @@ namespace LineAuthentication
         }
 
 
+        /// <summary>
+        /// Gets or sets the provider-assigned application secret.
+        /// </summary>
+        /// <remarks>This property is an alias of <see cref="OAuthOptions.ClientSecret"/>.</remarks>
         public string AppSecret
         {
             get => this.ClientSecret;
