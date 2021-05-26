@@ -47,6 +47,7 @@ namespace LineAccountExtension.Internals
 #endif
 
             context.RunClaimActions();
+            await this.Events.CreatingTicket(context).ConfigureAwait(false);
             return new(context.Principal!, context.Properties, this.Scheme.Name);
         }
 
