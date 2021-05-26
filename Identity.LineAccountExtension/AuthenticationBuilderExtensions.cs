@@ -7,23 +7,18 @@ namespace LineAccountExtension
     public static class AuthenticationBuilderExtensions
     {
         public static AuthenticationBuilder AddLineAccount(this AuthenticationBuilder builder)
-        {
-            return builder.AddLineAccount(LineAccountDefault.AuthenticationScheme, static _ => { });
-        }
+            => AddLineAccount(builder, static _ => { });
+
 
         public static AuthenticationBuilder AddLineAccount(this AuthenticationBuilder builder, Action<LineAccountOptions> configureOptions)
-        {
-            return builder.AddLineAccount(LineAccountDefault.AuthenticationScheme, configureOptions);
-        }
+            => AddLineAccount(builder, LineAccountDefault.AuthenticationScheme, configureOptions);
+
 
         public static AuthenticationBuilder AddLineAccount(this AuthenticationBuilder builder, string authenticationScheme, Action<LineAccountOptions> configureOptions)
-        {
-            return builder.AddLineAccount(authenticationScheme, LineAccountDefault.DisplayName, configureOptions);
-        }
+            => AddLineAccount(builder, authenticationScheme, LineAccountDefault.DisplayName, configureOptions);
+
 
         public static AuthenticationBuilder AddLineAccount(this AuthenticationBuilder builder, string authenticationScheme, string displayName, Action<LineAccountOptions> configureOptions)
-        {
-            return builder.AddOAuth<LineAccountOptions, LineAccountHandler>(authenticationScheme, displayName, configureOptions);
-        }
+            => builder.AddOAuth<LineAccountOptions, LineAccountHandler>(authenticationScheme, displayName, configureOptions);
     }
 }
