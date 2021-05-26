@@ -11,9 +11,9 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json.Linq;
 
-namespace LineAccountExtension
+namespace LineAccountExtension.Internals
 {
-    public class LineAuthenticationHandler : OAuthHandler<LineOptions>
+    internal sealed class LineAuthenticationHandler : OAuthHandler<LineOptions>
     {
         public LineAuthenticationHandler(IOptionsMonitor<LineOptions> options, ILoggerFactory logger, UrlEncoder encoder, ISystemClock clock)
             : base(options, logger, encoder, clock)
