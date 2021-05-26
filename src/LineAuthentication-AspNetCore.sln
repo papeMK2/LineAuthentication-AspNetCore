@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LineAuthentication", "LineA
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{EC3FA039-409C-4FD8-8693-1CBA4F9DE9F6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sandbox", "sandbox", "{C0472476-F565-4641-80CA-744AA1B9C483}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoApp", "DemoApp\DemoApp.csproj", "{5278F007-BD01-47BA-9F6D-4607EA77BC1C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +21,17 @@ Global
 		{B58100F6-37E5-42C7-8716-77D1D670E9CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B58100F6-37E5-42C7-8716-77D1D670E9CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B58100F6-37E5-42C7-8716-77D1D670E9CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5278F007-BD01-47BA-9F6D-4607EA77BC1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5278F007-BD01-47BA-9F6D-4607EA77BC1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5278F007-BD01-47BA-9F6D-4607EA77BC1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5278F007-BD01-47BA-9F6D-4607EA77BC1C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{B58100F6-37E5-42C7-8716-77D1D670E9CE} = {EC3FA039-409C-4FD8-8693-1CBA4F9DE9F6}
+		{5278F007-BD01-47BA-9F6D-4607EA77BC1C} = {C0472476-F565-4641-80CA-744AA1B9C483}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {47836B4D-7CE7-4F40-B25E-BCCF9E35905A}
