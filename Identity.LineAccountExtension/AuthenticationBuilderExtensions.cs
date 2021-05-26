@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace LineAccountExtension
 {
-    public static class LineAccountExtensions
+    public static class AuthenticationBuilderExtensions
     {
         public static AuthenticationBuilder AddLineAccount(this AuthenticationBuilder builder)
         {
