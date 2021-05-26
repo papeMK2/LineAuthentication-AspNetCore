@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Authentication.OAuth;
 namespace LineAccountExtension
 {
     /// <summary>
-    /// Configuration options for <see cref="LineAuthenticationHandler"/>.
+    /// Configuration options for <see cref="LineHandler"/>.
     /// </summary>
     public sealed class LineOptions : OAuthOptions
     {
