@@ -18,9 +18,9 @@ namespace LineAccountExtension
         public LineOptions()
         {
             this.CallbackPath = new("/signin-line");
-            this.AuthorizationEndpoint = LineAuthenticationConstants.AuthorizationEndpoint;
-            this.TokenEndpoint = LineAuthenticationConstants.TokenEndpoint;
-            this.UserInformationEndpoint = LineAuthenticationConstants.UserInformationEndpoint;
+            this.AuthorizationEndpoint = LineDefaults.AuthorizationEndpoint;
+            this.TokenEndpoint = LineDefaults.TokenEndpoint;
+            this.UserInformationEndpoint = LineDefaults.UserInformationEndpoint;
             this.Scope.Add("openid");
             this.Scope.Add("profile");
             this.Scope.Add("email");

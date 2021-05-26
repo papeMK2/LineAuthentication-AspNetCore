@@ -36,7 +36,7 @@ namespace LineAccountExtension
         /// <param name="configureOptions">A delegate to configure <see cref="LineOptions"/>.</param>
         /// <returns>A reference to <paramref name="builder"/> after the operation has completed.</returns>
         public static AuthenticationBuilder AddLine(this AuthenticationBuilder builder, Action<LineOptions> configureOptions)
-            => AddLine(builder, LineAuthenticationConstants.AuthenticationScheme, configureOptions);
+            => AddLine(builder, LineDefaults.AuthenticationScheme, configureOptions);
 
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace LineAccountExtension
         /// <param name="configureOptions">A delegate to configure <see cref="LineOptions"/>.</param>
         /// <returns>A reference to <paramref name="builder"/> after the operation has completed.</returns>
         public static AuthenticationBuilder AddLine(this AuthenticationBuilder builder, string authenticationScheme, Action<LineOptions> configureOptions)
-            => AddLine(builder, authenticationScheme, LineAuthenticationConstants.DisplayName, configureOptions);
+            => AddLine(builder, authenticationScheme, LineDefaults.DisplayName, configureOptions);
 
 
         /// <summary>

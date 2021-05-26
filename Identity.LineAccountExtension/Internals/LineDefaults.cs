@@ -1,9 +1,9 @@
 ﻿namespace LineAccountExtension.Internals
 {
     /// <summary>
-    /// Provides constants that are often used in line authentication.
+    /// Default values for LINE authentication
     /// </summary>
-    internal static class LineAuthenticationConstants
+    internal static class LineDefaults
     {
         /// <summary>
         /// The default scheme for LINE authentication. Defaults to <c>Line</c>.
