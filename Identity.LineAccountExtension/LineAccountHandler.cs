@@ -23,7 +23,7 @@ namespace LineAccountExtension
         protected override async Task<AuthenticationTicket> CreateTicketAsync(ClaimsIdentity identity, AuthenticationProperties properties, OAuthTokenResponse tokens)
         {
             var request = new HttpRequestMessage(HttpMethod.Get, Options.UserInformationEndpoint);
-            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", tokens.AccessToken);
+            request.Headers.Authorization = new("Bearer", tokens.AccessToken);
 
             var response = await Backchannel.SendAsync(request, Context.RequestAborted);
 
@@ -32,7 +32,7 @@ namespace LineAccountExtension
             var context = new OAuthCreatingTicketContext(new ClaimsPrincipal(identity), properties, Context, Scheme, Options, Backchannel, tokens, payload);
             context.RunClaimActions();
 
-            return new AuthenticationTicket(context.Principal, context.Properties, Scheme.Name);
+            return new(context.Principal, context.Properties, Scheme.Name);
         }
 
         protected override string BuildChallengeUrl(AuthenticationProperties properties, string redirectUri)
