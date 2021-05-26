@@ -67,6 +67,6 @@ namespace LineAccountExtension
         /// <param name="configureOptions">A delegate to configure <see cref="LineOptions"/>.</param>
         /// <returns>A reference to <paramref name="builder"/> after the operation has completed.</returns>
         public static AuthenticationBuilder AddLine(this AuthenticationBuilder builder, string authenticationScheme, string displayName, Action<LineOptions> configureOptions)
-            => builder.AddOAuth<LineOptions, LineAuthenticationHandler>(authenticationScheme, displayName, configureOptions);
+            => builder.AddOAuth<LineOptions, LineHandler>(authenticationScheme, displayName, configureOptions);
     }
 }

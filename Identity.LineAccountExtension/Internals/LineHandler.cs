@@ -22,10 +22,10 @@ namespace LineAccountExtension.Internals
     /// <summary>
     /// Authentication handler for LINE's OAuth based authentication.
     /// </summary>
-    internal sealed class LineAuthenticationHandler : OAuthHandler<LineOptions>
+    internal sealed class LineHandler : OAuthHandler<LineOptions>
     {
         /// <inheritdoc />
-        public LineAuthenticationHandler(IOptionsMonitor<LineOptions> options, ILoggerFactory logger, UrlEncoder encoder, ISystemClock clock)
+        public LineHandler(IOptionsMonitor<LineOptions> options, ILoggerFactory logger, UrlEncoder encoder, ISystemClock clock)
             : base(options, logger, encoder, clock)
         { }
 
