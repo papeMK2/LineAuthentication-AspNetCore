@@ -15,15 +15,22 @@ using Newtonsoft.Json.Linq;
 using System.Text.Json;
 #endif
 
+
+
 namespace LineAccountExtension.Internals
 {
+    /// <summary>
+    /// Authentication handler for LINE's OAuth based authentication.
+    /// </summary>
     internal sealed class LineAuthenticationHandler : OAuthHandler<LineOptions>
     {
+        /// <inheritdoc />
         public LineAuthenticationHandler(IOptionsMonitor<LineOptions> options, ILoggerFactory logger, UrlEncoder encoder, ISystemClock clock)
             : base(options, logger, encoder, clock)
         { }
 
 
+        /// <inheritdoc />
         protected override async Task<AuthenticationTicket> CreateTicketAsync(ClaimsIdentity identity, AuthenticationProperties properties, OAuthTokenResponse tokens)
         {
             var request = new HttpRequestMessage(HttpMethod.Get, this.Options.UserInformationEndpoint);
@@ -52,6 +59,7 @@ namespace LineAccountExtension.Internals
         }
 
 
+        /// <inheritdoc />
         protected override string BuildChallengeUrl(AuthenticationProperties properties, string redirectUri)
         {
             var state = this.Options.StateDataFormat.Protect(properties);
@@ -67,6 +75,7 @@ namespace LineAccountExtension.Internals
         }
 
 
+        /// <inheritdoc />
         protected override string FormatScope(IEnumerable<string> scopes)
             => string.Join("%20", scopes);
     }

@@ -3,10 +3,18 @@ using LineAccountExtension.Internals;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.OAuth;
 
+
+
 namespace LineAccountExtension
 {
+    /// <summary>
+    /// Configuration options for <see cref="LineAuthenticationHandler"/>.
+    /// </summary>
     public sealed class LineOptions : OAuthOptions
     {
+        /// <summary>
+        /// Initializes a new <see cref="LineOptions"/>.
+        /// </summary>
         public LineOptions()
         {
             this.CallbackPath = new("/signin-line");
@@ -22,11 +30,13 @@ namespace LineAccountExtension
             this.ClaimActions.MapJsonKey(ClaimTypes.Email, "email");
         }
 
+
         public string AppId
         {
             get => this.ClientId;
             set => this.ClientId = value;
         }
+
 
         public string AppSecret
         {
