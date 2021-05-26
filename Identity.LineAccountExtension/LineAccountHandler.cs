@@ -24,9 +24,9 @@ namespace LineAccountExtension
             var request = new HttpRequestMessage(HttpMethod.Get, Options.UserInformationEndpoint);
             request.Headers.Authorization = new("Bearer", tokens.AccessToken);
 
-            var response = await Backchannel.SendAsync(request, Context.RequestAborted);
-
-            var payload = JObject.Parse(await response.Content.ReadAsStringAsync());
+            var response = await Backchannel.SendAsync(request, Context.RequestAborted).ConfigureAwait(false);
+            var json = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            var payload = JObject.Parse(json);
 
             var context = new OAuthCreatingTicketContext(new ClaimsPrincipal(identity), properties, Context, Scheme, Options, Backchannel, tokens, payload);
             context.RunClaimActions();
