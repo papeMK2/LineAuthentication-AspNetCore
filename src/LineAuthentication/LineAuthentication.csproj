@@ -6,6 +6,25 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <PropertyGroup>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <IsPackable>true</IsPackable>
+        <PackageId>LineAuthentication</PackageId>
+        <Version>1.0.0.0</Version>
+        <Description>ASP.NET Core contains middleware to support LINE's OpenId and OAuth 2.0 authentication workflows.</Description>
+        <PackageProjectUrl>https://github.com/papeMK2/LineAuthentication-AspNetCore</PackageProjectUrl>
+        <PackageIconUrl>https://github.com/papeMK2/LineAuthentication-AspNetCore/blob/master/assets/LINE_APP.png</PackageIconUrl>
+        <PackageTags>LINE, OpenID, OAuth, AspNetCore, Authentication, Security</PackageTags>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <RepositoryUrl>$(PackageProjectUrl)</RepositoryUrl>
+        <RepositoryType>Git</RepositoryType>
+        <Company />
+        <Authors>papeMK2, xin9le</Authors>
+        <Copyright>Copyright© papeMK2, xin9le</Copyright>
+        <PackageReleaseNotes></PackageReleaseNotes>
+    </PropertyGroup>
+
     <ItemGroup Condition="'$(TargetFramework)' != 'netstandard2.0'">
         <FrameworkReference Include="Microsoft.AspNetCore.App" />
     </ItemGroup>
