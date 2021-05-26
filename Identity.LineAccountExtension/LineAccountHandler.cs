@@ -56,10 +56,5 @@ namespace LineAccountExtension
         {
             return string.Join("%20", scopes);
         }
-
-        protected override string FormatScope()
-        {
-            return base.FormatScope();
-        }
     }
 }
