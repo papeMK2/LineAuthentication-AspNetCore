@@ -36,7 +36,7 @@ dotnet add package LineAuthentication
 
 # License
 
-This library is provided under [MIT License](http://opensource.org/licenses/MIT).
+This library is provided under [Apache License 2.0](https://opensource.org/licenses/Apache-2.0).
 
 
 

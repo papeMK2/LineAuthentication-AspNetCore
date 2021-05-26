@@ -16,7 +16,7 @@
         <PackageIconUrl>https://raw.githubusercontent.com/papeMK2/LineAuthentication-AspNetCore/master/assets/LINE_APP.png</PackageIconUrl>
         <PackageTags>LINE, OpenID, OAuth, AspNetCore, Authentication, Security</PackageTags>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
         <RepositoryUrl>$(PackageProjectUrl)</RepositoryUrl>
         <RepositoryType>Git</RepositoryType>
         <Company />
