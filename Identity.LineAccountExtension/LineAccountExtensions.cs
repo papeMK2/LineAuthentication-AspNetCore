@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Authentication;
+﻿using System;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.Extensions.DependencyInjection;
-using System;
 
 namespace LineAccountExtension
 {
@@ -8,26 +8,20 @@ namespace LineAccountExtension
     {
         public static AuthenticationBuilder AddLineAccount(this AuthenticationBuilder builder)
         {
-            return builder.AddLineAccount(LineAccountDefault.AuthenticationScheme, _ => { });
+            return builder.AddLineAccount(LineAccountDefault.AuthenticationScheme, static _ => { });
         }
 
-        public static AuthenticationBuilder AddLineAccount(this AuthenticationBuilder builder, 
-            Action<LineAccountOptions> configureOptions)
+        public static AuthenticationBuilder AddLineAccount(this AuthenticationBuilder builder, Action<LineAccountOptions> configureOptions)
         {
             return builder.AddLineAccount(LineAccountDefault.AuthenticationScheme, configureOptions);
         }
 
-        public static AuthenticationBuilder AddLineAccount(this AuthenticationBuilder builder,
-            string authenticationScheme,
-            Action<LineAccountOptions> configureOptions)
+        public static AuthenticationBuilder AddLineAccount(this AuthenticationBuilder builder, string authenticationScheme, Action<LineAccountOptions> configureOptions)
         {
             return builder.AddLineAccount(authenticationScheme, LineAccountDefault.DisplayName, configureOptions);
         }
 
-        public static AuthenticationBuilder AddLineAccount(this AuthenticationBuilder builder,
-            string authenticationScheme,
-            string displayName,
-            Action<LineAccountOptions> configureOptions)
+        public static AuthenticationBuilder AddLineAccount(this AuthenticationBuilder builder, string authenticationScheme, string displayName, Action<LineAccountOptions> configureOptions)
         {
             return builder.AddOAuth<LineAccountOptions, LineAccountHandler>(authenticationScheme, displayName, configureOptions);
         }

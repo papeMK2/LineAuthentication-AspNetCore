@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Security.Claims;
-using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
@@ -17,12 +16,9 @@ namespace LineAccountExtension
 {
     public class LineAccountHandler : OAuthHandler<LineAccountOptions>
     {
-        public LineAccountHandler(IOptionsMonitor<LineAccountOptions> options, 
-            ILoggerFactory logger, 
-            UrlEncoder encoder, 
-            ISystemClock clock) : base(options, logger, encoder, clock)
-        {
-        }
+        public LineAccountHandler(IOptionsMonitor<LineAccountOptions> options, ILoggerFactory logger, UrlEncoder encoder, ISystemClock clock)
+            : base(options, logger, encoder, clock)
+        { }
 
         protected override async Task<AuthenticationTicket> CreateTicketAsync(ClaimsIdentity identity, AuthenticationProperties properties, OAuthTokenResponse tokens)
         {
@@ -35,7 +31,7 @@ namespace LineAccountExtension
 
             var context = new OAuthCreatingTicketContext(new ClaimsPrincipal(identity), properties, Context, Scheme, Options, Backchannel, tokens, payload);
             context.RunClaimActions();
-            
+
             return new AuthenticationTicket(context.Principal, context.Properties, Scheme.Name);
         }
 

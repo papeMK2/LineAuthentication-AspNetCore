@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace LineAccountExtension
+﻿namespace LineAccountExtension
 {
     public static class LineAccountDefault
     {
