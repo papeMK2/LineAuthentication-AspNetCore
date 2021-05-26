@@ -19,6 +19,7 @@ namespace LineAccountExtension.Internals
             : base(options, logger, encoder, clock)
         { }
 
+
         protected override async Task<AuthenticationTicket> CreateTicketAsync(ClaimsIdentity identity, AuthenticationProperties properties, OAuthTokenResponse tokens)
         {
             var request = new HttpRequestMessage(HttpMethod.Get, this.Options.UserInformationEndpoint);
@@ -34,6 +35,7 @@ namespace LineAccountExtension.Internals
             return new(context.Principal, context.Properties, this.Scheme.Name);
         }
 
+
         protected override string BuildChallengeUrl(AuthenticationProperties properties, string redirectUri)
         {
             var state = this.Options.StateDataFormat.Protect(properties);
@@ -48,9 +50,8 @@ namespace LineAccountExtension.Internals
             return QueryHelpers.AddQueryString(this.Options.AuthorizationEndpoint, queryString);
         }
 
+
         protected override string FormatScope(IEnumerable<string> scopes)
-        {
-            return string.Join("%20", scopes);
-        }
+            => string.Join("%20", scopes);
     }
 }
