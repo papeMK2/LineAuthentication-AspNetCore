@@ -10,7 +10,7 @@ namespace LineAccountExtension
     /// <summary>
     /// Extension methods to configure LINE OAuth authentication.
     /// </summary>
-    public static class AuthenticationBuilderExtensions
+    public static class LineExtensions
     {
         /// <summary>
         /// Adds LINE OAuth-based authentication to <see cref="AuthenticationBuilder"/> using the default scheme.
