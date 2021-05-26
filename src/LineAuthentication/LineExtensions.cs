@@ -1,11 +1,11 @@
 ﻿using System;
-using LineAccountExtension.Internals;
+using LineAuthentication.Internals;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.Extensions.DependencyInjection;
 
 
 
-namespace LineAccountExtension
+namespace LineAuthentication
 {
     /// <summary>
     /// Extension methods to configure LINE OAuth authentication.

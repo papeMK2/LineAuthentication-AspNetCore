@@ -1,4 +1,4 @@
-﻿namespace LineAccountExtension.Internals
+﻿namespace LineAuthentication.Internals
 {
     /// <summary>
     /// Default values for LINE authentication

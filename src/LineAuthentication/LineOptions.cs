@@ -1,11 +1,11 @@
 ﻿using System.Security.Claims;
-using LineAccountExtension.Internals;
+using LineAuthentication.Internals;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.OAuth;
 
 
 
-namespace LineAccountExtension
+namespace LineAuthentication
 {
     /// <summary>
     /// Configuration options for <see cref="LineHandler"/>.

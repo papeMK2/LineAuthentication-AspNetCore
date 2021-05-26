@@ -17,7 +17,7 @@ using System.Text.Json;
 
 
 
-namespace LineAccountExtension.Internals
+namespace LineAuthentication.Internals
 {
     /// <summary>
     /// Authentication handler for LINE's OAuth based authentication.
