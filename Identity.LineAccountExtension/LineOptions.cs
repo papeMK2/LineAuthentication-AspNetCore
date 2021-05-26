@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Authentication.OAuth;
 
 namespace LineAccountExtension
 {
-    public class LineOptions : OAuthOptions
+    public sealed class LineOptions : OAuthOptions
     {
         public LineOptions()
         {
