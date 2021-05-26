@@ -1,7 +1,6 @@
 ﻿using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.OAuth;
-using Microsoft.AspNetCore.Http;
 
 namespace LineAccountExtension
 {
@@ -9,7 +8,7 @@ namespace LineAccountExtension
     {
         public LineAccountOptions()
         {
-            CallbackPath = new PathString("/signin-line");
+            CallbackPath = new("/signin-line");
             AuthorizationEndpoint = LineAuthenticationConstants.AuthorizationEndpoint;
             TokenEndpoint = LineAuthenticationConstants.TokenEndpoint;
             UserInformationEndpoint = LineAuthenticationConstants.UserInformationEndpoint;
@@ -28,6 +27,7 @@ namespace LineAccountExtension
             get => ClientId;
             set => ClientId = value;
         }
+
         public string AppSecret
         {
             get => ClientSecret;
