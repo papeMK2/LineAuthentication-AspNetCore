@@ -8,30 +8,29 @@ namespace LineAccountExtension
     {
         public LineAccountOptions()
         {
-            CallbackPath = new("/signin-line");
-            AuthorizationEndpoint = LineAuthenticationConstants.AuthorizationEndpoint;
-            TokenEndpoint = LineAuthenticationConstants.TokenEndpoint;
-            UserInformationEndpoint = LineAuthenticationConstants.UserInformationEndpoint;
-            Scope.Add("openid");
-            Scope.Add("profile");
-            Scope.Add("email");
-
-            ClaimActions.MapJsonKey(ClaimTypes.NameIdentifier, "userId");
-            ClaimActions.MapJsonKey(ClaimTypes.Name, "displayName");
-            ClaimActions.MapJsonKey("urn:line:picture", "pictureUrl");
-            ClaimActions.MapJsonKey(ClaimTypes.Email, "email");
+            this.CallbackPath = new("/signin-line");
+            this.AuthorizationEndpoint = LineAuthenticationConstants.AuthorizationEndpoint;
+            this.TokenEndpoint = LineAuthenticationConstants.TokenEndpoint;
+            this.UserInformationEndpoint = LineAuthenticationConstants.UserInformationEndpoint;
+            this.Scope.Add("openid");
+            this.Scope.Add("profile");
+            this.Scope.Add("email");
+            this.ClaimActions.MapJsonKey(ClaimTypes.NameIdentifier, "userId");
+            this.ClaimActions.MapJsonKey(ClaimTypes.Name, "displayName");
+            this.ClaimActions.MapJsonKey("urn:line:picture", "pictureUrl");
+            this.ClaimActions.MapJsonKey(ClaimTypes.Email, "email");
         }
 
         public string AppId
         {
-            get => ClientId;
-            set => ClientId = value;
+            get => this.ClientId;
+            set => this.ClientId = value;
         }
 
         public string AppSecret
         {
-            get => ClientSecret;
-            set => ClientSecret = value;
+            get => this.ClientSecret;
+            set => this.ClientSecret = value;
         }
     }
 }

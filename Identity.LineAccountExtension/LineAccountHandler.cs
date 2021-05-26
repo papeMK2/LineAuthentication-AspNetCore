@@ -21,31 +21,31 @@ namespace LineAccountExtension
 
         protected override async Task<AuthenticationTicket> CreateTicketAsync(ClaimsIdentity identity, AuthenticationProperties properties, OAuthTokenResponse tokens)
         {
-            var request = new HttpRequestMessage(HttpMethod.Get, Options.UserInformationEndpoint);
+            var request = new HttpRequestMessage(HttpMethod.Get, this.Options.UserInformationEndpoint);
             request.Headers.Authorization = new("Bearer", tokens.AccessToken);
 
-            var response = await Backchannel.SendAsync(request, Context.RequestAborted).ConfigureAwait(false);
+            var response = await this.Backchannel.SendAsync(request, this.Context.RequestAborted).ConfigureAwait(false);
             var payload = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             var user = JObject.Parse(payload);
             var principal = new ClaimsPrincipal(identity);
-            var context = new OAuthCreatingTicketContext(principal, properties, Context, Scheme, Options, Backchannel, tokens, user);
+            var context = new OAuthCreatingTicketContext(principal, properties, this.Context, this.Scheme, this.Options, this.Backchannel, tokens, user);
             context.RunClaimActions();
-            return new(context.Principal, context.Properties, Scheme.Name);
+            return new(context.Principal, context.Properties, this.Scheme.Name);
         }
 
         protected override string BuildChallengeUrl(AuthenticationProperties properties, string redirectUri)
         {
-            var state = Options.StateDataFormat.Protect(properties);
+            var state = this.Options.StateDataFormat.Protect(properties);
             var queryString = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
             {
                 ["response_type"] = "code",
-                ["client_id"] = Options.ClientId,
+                ["client_id"] = this.Options.ClientId,
                 ["redirect_uri"] = redirectUri,
-                ["scope"] = string.Join(" ", Options.Scope),
+                ["scope"] = string.Join(" ", this.Options.Scope),
                 ["state"] = state,
             };
-            return QueryHelpers.AddQueryString(Options.AuthorizationEndpoint, queryString);
+            return QueryHelpers.AddQueryString(this.Options.AuthorizationEndpoint, queryString);
         }
 
         protected override string FormatScope(IEnumerable<string> scopes)
