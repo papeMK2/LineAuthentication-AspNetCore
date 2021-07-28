@@ -22,10 +22,10 @@ namespace LineAuthentication.Internals
     /// <summary>
     /// Authentication handler for LINE's OAuth based authentication.
     /// </summary>
-    internal sealed class LineHandler : OAuthHandler<LineOptions>
+    internal sealed class LineOAuthHandler : OAuthHandler<LineOAuthOptions>
     {
         /// <inheritdoc />
-        public LineHandler(IOptionsMonitor<LineOptions> options, ILoggerFactory logger, UrlEncoder encoder, ISystemClock clock)
+        public LineOAuthHandler(IOptionsMonitor<LineOAuthOptions> options, ILoggerFactory logger, UrlEncoder encoder, ISystemClock clock)
             : base(options, logger, encoder, clock)
         { }
 
@@ -33,15 +33,37 @@ namespace LineAuthentication.Internals
         /// <inheritdoc />
         protected override async Task<AuthenticationTicket> CreateTicketAsync(ClaimsIdentity identity, AuthenticationProperties properties, OAuthTokenResponse tokens)
         {
-            var request = new HttpRequestMessage(HttpMethod.Get, this.Options.UserInformationEndpoint);
-            request.Headers.Authorization = new("Bearer", tokens.AccessToken);
-            var response = await this.Backchannel.SendAsync(request, this.Context.RequestAborted).ConfigureAwait(false);
+            var parameters = new KeyValuePair<string, string>[]
+            {
+#if NETSTANDARD2_0_OR_GREATER
+                new("id_token", tokens.Response.Value<string>("id_token") ?? string.Empty),
+#else
+                new("id_token", tokens.Response.RootElement.GetString("id_token") ?? string.Empty),
+#endif
+                new("client_id", this.Options.ClientId),
+            };
+            using var request = new HttpRequestMessage(HttpMethod.Post, this.Options.UserInformationEndpoint);
+            using var httpContent = new FormUrlEncodedContent(parameters!);
+            request.Content = httpContent;
+            request.Headers.Accept.Add(new("application/json"));
+            using var response = await this.Backchannel.SendAsync(request, this.Context.RequestAborted).ConfigureAwait(false);
 
 #if NET5_0_OR_GREATER
             var payload = await response.Content.ReadAsStringAsync(this.Context.RequestAborted).ConfigureAwait(false);
 #else
             var payload = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 #endif
+
+            if (!response.IsSuccessStatusCode)
+            {
+                var headers = response.Headers.ToString();
+                this.Logger.LogError("An error occurred while verifying the ID token. The remote server returned a {Status} response with the following payload: {Headers} {Body}.", response.StatusCode, headers, payload);
+#if NET5_0_OR_GREATER
+                throw new HttpRequestException("An error occurred while verifying the ID token.", null, response.StatusCode);
+#else
+                throw new HttpRequestException("An error occurred while verifying the ID token.", null);
+#endif
+            }
 
             var principal = new ClaimsPrincipal(identity);
 
@@ -62,21 +84,16 @@ namespace LineAuthentication.Internals
         /// <inheritdoc />
         protected override string BuildChallengeUrl(AuthenticationProperties properties, string redirectUri)
         {
-            var state = this.Options.StateDataFormat.Protect(properties);
             var queryString = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
             {
                 ["response_type"] = "code",
                 ["client_id"] = this.Options.ClientId,
                 ["redirect_uri"] = redirectUri,
-                ["scope"] = string.Join(" ", this.Options.Scope),
-                ["state"] = state,
+                ["scope"] = this.FormatScope(),
+                ["state"] = this.Options.StateDataFormat.Protect(properties),
+                ["prompt"] = this.Options.Prompt ? "consent" : string.Empty,
             };
             return QueryHelpers.AddQueryString(this.Options.AuthorizationEndpoint, queryString!);
         }
-
-
-        /// <inheritdoc />
-        protected override string FormatScope(IEnumerable<string> scopes)
-            => string.Join("%20", scopes);
     }
 }
