@@ -1,9 +1,9 @@
-﻿namespace LineAuthentication.Internals
+﻿namespace LineAuthentication
 {
     /// <summary>
     /// Default values for LINE authentication
     /// </summary>
-    internal static class LineOAuthDefaults
+    public static class LineOAuthDefaults
     {
         /// <summary>
         /// The default scheme for LINE authentication. Defaults to <c>Line</c>.

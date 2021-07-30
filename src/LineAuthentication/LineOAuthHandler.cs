@@ -17,12 +17,12 @@ using System.Text.Json;
 
 
 
-namespace LineAuthentication.Internals
+namespace LineAuthentication
 {
     /// <summary>
     /// Authentication handler for LINE's OAuth based authentication.
     /// </summary>
-    internal sealed class LineOAuthHandler : OAuthHandler<LineOAuthOptions>
+    public class LineOAuthHandler : OAuthHandler<LineOAuthOptions>
     {
         /// <inheritdoc />
         public LineOAuthHandler(IOptionsMonitor<LineOAuthOptions> options, ILoggerFactory logger, UrlEncoder encoder, ISystemClock clock)

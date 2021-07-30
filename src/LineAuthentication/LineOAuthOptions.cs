@@ -1,5 +1,4 @@
 ﻿using System.Security.Claims;
-using LineAuthentication.Internals;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.OAuth;
 
@@ -10,7 +9,7 @@ namespace LineAuthentication
     /// <summary>
     /// Configuration options for <see cref="LineOAuthHandler"/>.
     /// </summary>
-    public sealed class LineOAuthOptions : OAuthOptions
+    public class LineOAuthOptions : OAuthOptions
     {
         /// <summary>
         /// Used to force the consent screen to be displayed even if the user has already granted all requested permissions.
