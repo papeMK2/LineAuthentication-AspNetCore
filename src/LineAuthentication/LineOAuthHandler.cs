@@ -22,7 +22,7 @@ namespace LineAuthentication
     /// <summary>
     /// Authentication handler for LINE's OAuth based authentication.
     /// </summary>
-    public sealed class LineOAuthHandler : OAuthHandler<LineOAuthOptions>
+    public class LineOAuthHandler : OAuthHandler<LineOAuthOptions>
     {
         /// <inheritdoc />
         public LineOAuthHandler(IOptionsMonitor<LineOAuthOptions> options, ILoggerFactory logger, UrlEncoder encoder, ISystemClock clock)
