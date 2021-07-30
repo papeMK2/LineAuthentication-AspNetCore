@@ -1,9 +1,16 @@
 # LineAuthentication for ASP.NET Core
-LineAuthentication provides [LINE](https://line.me/) authentication like Twitter, Facebook, and other external login.
+LineAuthentication provides [LINE](https://line.me/) authentication like Twitter, Facebook, and other external login. **Supports [LINE Profile+](https://developers.line.biz/ja/docs/partner-docs/line-profile-plus/)**.
+
+
+## Support Platforms
+
+- .NET Standard 2.0+
+- .NET Core 3.0+
+- .NET 5+
 
 
 
-# How to use
+## How to use
 
 It is very easy to use, just call `AddLine()` which is an extension method of `AuthenticationBuilder`. This API style is same of other external login, so you never confuse. 
 
@@ -19,7 +26,7 @@ services
 
 
 
-# Installation
+## Installation
 
 ```
 dotnet add package LineAuthentication
@@ -27,20 +34,20 @@ dotnet add package LineAuthentication
 
 
 
-# LINE login docs
+## LINE login docs
 
 - [Japanese](https://developers.line.biz/ja/docs/line-login/integrate-line-login/)
 - [English](https://developers.line.biz/en/docs/line-login/integrate-line-login/)
 
 
 
-# License
+## License
 
 This library is provided under [Apache License 2.0](https://opensource.org/licenses/Apache-2.0).
 
 
 
-# Authors
+## Authors
 - Tsubasa Yoshino (a.k.a [@papeMK2](https://twitter.com/papeMK2))
 - Takaaki Suzuki (a.k.a [@xin9le](https://twitter.com/xin9le))
 
