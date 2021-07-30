@@ -25,6 +25,37 @@ services
 ```
 
 
+To access the LINE Profile+, add an authorization scope and extract the data from the JSON payload.
+
+
+```csharp
+services
+    .AddAuthentication()
+    .AddLine(options =>
+    {
+        // ...
+
+        // Add authorization scopes
+        options.Scope.Add("real_name");
+        options.Scope.Add("gender");
+        options.Scope.Add("birthdate");
+        options.Scope.Add("address");
+        options.Scope.Add("phone");
+        options.Scope.Add("email");
+
+        // Map JSON payload to claims
+        options.ClaimActions.MapJsonKey(ClaimTypes.Email, "email");
+
+        // Access entire JSON payload
+        options.Events.OnCreatingTicket = context =>
+        {
+            var json = context.User.GetRawText();
+            return Task.CompletedTask;
+        };
+    });
+```
+
+
 
 ## Installation
 
