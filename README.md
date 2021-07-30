@@ -19,8 +19,8 @@ services
     .AddAuthentication()
     .AddLine(options =>
     {
-        options.ClientId = Configuration["Authentication:Line:AppId"];
-        options.ClientSecret = Configuration["Authentication:Line:AppSecret"];
+        options.ClientId = Configuration["Authentication:Line:ChannelId"];
+        options.ClientSecret = Configuration["Authentication:Line:ChannelSecret"];
     });
 ```
 
