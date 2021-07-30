@@ -12,8 +12,8 @@ services
     .AddAuthentication()
     .AddLine(options =>
     {
-        options.AppId = Configuration["Authentication:Line:AppId"];
-        options.AppSecret = Configuration["Authentication:Line:AppSecret"];
+        options.ClientId = Configuration["Authentication:Line:AppId"];
+        options.ClientSecret = Configuration["Authentication:Line:AppSecret"];
     });
 ```
 
@@ -46,4 +46,4 @@ This library is provided under [Apache License 2.0](https://opensource.org/licen
 
 Tsubasa Yoshino is software developer in Tokyo, Japan. Awarded Microsoft MVP (Azure) since October, 2016. He's the original owner of this project.
 
-Takaaki Suzuki is software developer in Fukui, Japan. Awarded Microsoft MVP (C#) since July, 2012. He's a contributer who led the .NET Standard / .NET 5 support.
+Takaaki Suzuki is software developer in Fukui, Japan. Awarded Microsoft MVP (C#) since July, 2012. He's a contributer who led the .NET Standard / .NET 5 and LINE Profile+ support.
