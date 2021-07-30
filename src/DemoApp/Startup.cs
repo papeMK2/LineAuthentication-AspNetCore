@@ -40,8 +40,8 @@ namespace DemoApp
                 })
                 .AddLine(opts =>
                 {
-                    opts.AppId = Configuration["Authentication:Line:AppId"];
-                    opts.AppSecret = Configuration["Authentication:Line:AppSecret"];
+                    opts.ClientId = Configuration["Authentication:Line:AppId"];
+                    opts.ClientSecret = Configuration["Authentication:Line:AppSecret"];
                 });
             services.AddControllersWithViews();
         }

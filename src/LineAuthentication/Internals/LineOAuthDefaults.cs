@@ -3,7 +3,7 @@
     /// <summary>
     /// Default values for LINE authentication
     /// </summary>
-    internal static class LineDefaults
+    internal static class LineOAuthDefaults
     {
         /// <summary>
         /// The default scheme for LINE authentication. Defaults to <c>Line</c>.
@@ -32,6 +32,6 @@
         /// <summary>
         /// The LINE endpoint that is used to gather additional user information.
         /// </summary>
-        public const string UserInformationEndpoint = "https://api.line.me/v2/profile";
+        public const string UserInformationEndpoint = "https://api.line.me/oauth2/v2.1/verify";
     }
 }
