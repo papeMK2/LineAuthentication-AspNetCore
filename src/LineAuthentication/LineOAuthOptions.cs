@@ -1,5 +1,4 @@
 ﻿using System.Security.Claims;
-using LineAuthentication.Internals;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.OAuth;
 
