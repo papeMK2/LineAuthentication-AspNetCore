@@ -38,7 +38,7 @@ public class LineOAuthHandler : OAuthHandler<LineOAuthOptions>
 #if NETSTANDARD2_0_OR_GREATER
             new("id_token", tokens.Response.Value<string>("id_token") ?? string.Empty),
 #else
-            new("id_token", tokens.Response.RootElement.GetString("id_token") ?? string.Empty),
+            new("id_token", tokens.Response?.RootElement.GetString("id_token") ?? string.Empty),
 #endif
             new("client_id", this.Options.ClientId),
         };
