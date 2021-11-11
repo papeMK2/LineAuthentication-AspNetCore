@@ -23,6 +23,7 @@
         <Copyright>Copyright© papeMK2, xin9le</Copyright>
         <PackageReleaseNotes></PackageReleaseNotes>
         <PackageIcon>LINE_APP.png</PackageIcon>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
 
     <ItemGroup Condition="'$(TargetFramework)' != 'netstandard2.0'">
@@ -37,6 +38,10 @@
     
     <ItemGroup>
       <None Include="..\..\assets\LINE_APP.png">
+        <Pack>True</Pack>
+        <PackagePath>\</PackagePath>
+      </None>
+      <None Include="..\..\README.md">
         <Pack>True</Pack>
         <PackagePath>\</PackagePath>
       </None>
