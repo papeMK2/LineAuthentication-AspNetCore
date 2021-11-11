@@ -13,7 +13,6 @@
         <Version>1.1.2.0</Version>
         <Description>ASP.NET Core security middleware enabling LINE authentication. Supports LINE Profile+.</Description>
         <PackageProjectUrl>https://github.com/papeMK2/LineAuthentication-AspNetCore</PackageProjectUrl>
-        <PackageIconUrl>https://raw.githubusercontent.com/papeMK2/LineAuthentication-AspNetCore/master/assets/LINE_APP.png</PackageIconUrl>
         <PackageTags>LINE, OpenID, OAuth, AspNetCore, Authentication, Security</PackageTags>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
@@ -23,6 +22,7 @@
         <Authors>papeMK2, xin9le</Authors>
         <Copyright>Copyright© papeMK2, xin9le</Copyright>
         <PackageReleaseNotes></PackageReleaseNotes>
+        <PackageIcon>LINE_APP.png</PackageIcon>
     </PropertyGroup>
 
     <ItemGroup Condition="'$(TargetFramework)' != 'netstandard2.0'">
@@ -33,6 +33,13 @@
         <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.1.1" />
         <PackageReference Include="Microsoft.AspNetCore.Authentication.OAuth" Version="2.1.1" />
         <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <None Include="..\..\assets\LINE_APP.png">
+        <Pack>True</Pack>
+        <PackagePath>\</PackagePath>
+      </None>
     </ItemGroup>
 
 </Project>
