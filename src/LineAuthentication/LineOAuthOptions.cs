@@ -16,7 +16,7 @@ public class LineOAuthOptions : OAuthOptions
     /// <summary>
     /// Used to force the consent screen to be displayed even if the user has already granted all requested permissions.<br/>
     /// <br/>
-    /// When set to <c>true</c>, Line displays the consent screen for every authorization request.<br/>
+    /// When set to <c>true</c>, LINE displays the consent screen for every authorization request.<br/>
     /// When left to <c>false</c>, the consent screen is skipped if the user has already granted.
     /// </summary>
     public bool Prompt { get; set; }
@@ -44,7 +44,7 @@ public class LineOAuthOptions : OAuthOptions
     /// <summary>
     /// Used to enable change login method on the consent screen.<br/>
     /// <br/>
-    /// When set to <c>true</c>, enable change login method. Default value is <c>true</c>.<br/>
+    /// When set to <c>true</c>, enable change login method.<br/>
     /// When set to <c>false</c>, disable change login method.
     /// </summary>
     public bool EnableSwitchLoginMethod { get; set; } = true;
