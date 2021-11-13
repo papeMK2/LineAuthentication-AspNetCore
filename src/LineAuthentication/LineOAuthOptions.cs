@@ -34,7 +34,7 @@ public class LineOAuthOptions : OAuthOptions
     /// When set to <c>Normal</c>, display the Add Friend option on the consent screen
     /// When set to <c>Aggressive</c>, display the Add Friends option after the consent screen
     /// </summary>
-    public BotPromptModel BotPromptMode { get; set;} = BotPromptModel.Normal;
+    public BotPromptModel BotPromptMode { get; set; }
 
     /// <summary>
     /// Used to set the QR code login as the default login method.
