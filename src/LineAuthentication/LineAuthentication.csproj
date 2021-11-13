@@ -29,26 +29,22 @@
     <ItemGroup Condition="'$(TargetFramework)' != 'netstandard2.0'">
         <FrameworkReference Include="Microsoft.AspNetCore.App" />
     </ItemGroup>
-    
+
     <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
         <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.1.1" />
         <PackageReference Include="Microsoft.AspNetCore.Authentication.OAuth" Version="2.1.1" />
         <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     </ItemGroup>
-    
+
     <ItemGroup>
-      <None Include="..\..\assets\LINE_APP.png">
-        <Pack>True</Pack>
-        <PackagePath>\</PackagePath>
-      </None>
-      <None Include="..\..\README.md">
-        <Pack>True</Pack>
-        <PackagePath>\</PackagePath>
-      </None>
-    </ItemGroup>
-    
-    <ItemGroup>
-      <PackageReference Include="FastEnum" Version="1.7.0" />
+        <None Include="..\..\assets\LINE_APP.png">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+        </None>
+        <None Include="..\..\README.md">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+        </None>
     </ItemGroup>
 
 </Project>

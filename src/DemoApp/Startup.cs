@@ -1,6 +1,6 @@
 ﻿using DemoApp.Data;
 using LineAuthentication;
-using LineAuthentication.Entities.MessagingApi;
+using LineAuthentication.MessagingApi;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -45,10 +45,9 @@ namespace DemoApp
                     opts.ClientSecret = Configuration["Authentication:Line:AppSecret"];
 
                     opts.Prompt = true;
-                    opts.BotPrompt = true;
-                    opts.BotPromptMode = BotPromptModel.Aggressive;
+                    opts.BotPrompt = BotPrompt.Aggressive;
                     opts.UseQRLogin = true;
-                    opts.DisableAutoLogin = true;
+                    opts.EnableAutoLogin = false;
                     opts.EnableSwitchLoginMethod = false;
                 });
             services.AddControllersWithViews();
