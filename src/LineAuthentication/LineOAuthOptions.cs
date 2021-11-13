@@ -14,8 +14,9 @@ public class LineOAuthOptions : OAuthOptions
 {
     #region Properties
     /// <summary>
-    /// Used to force the consent screen to be displayed even if the user has already granted all requested permissions.
-    /// When set to <c>true</c>, Line displays the consent screen for every authorization request.
+    /// Used to force the consent screen to be displayed even if the user has already granted all requested permissions.<br/>
+    /// <br/>
+    /// When set to <c>true</c>, Line displays the consent screen for every authorization request.<br/>
     /// When left to <c>false</c>, the consent screen is skipped if the user has already granted.
     /// </summary>
     public bool Prompt { get; set; }
@@ -32,26 +33,28 @@ public class LineOAuthOptions : OAuthOptions
 
 
     /// <summary>
-    /// Used to set the QR code login as the default login method.
-    /// When set to <c>true</c>, Default login method is set to QR Code
-    /// When set to <c>false</c>, Default login method is set to Email and Password.
+    /// Used to set the QR code login as the default login method.<br/>
+    /// <br/>
+    /// When set to <c>true</c>, fefault login method is set to QR Code.<br/>
+    /// When set to <c>false</c>, fefault login method is set to Email and Password.
     /// </summary>
     public bool UseQRLogin { get; set; }
 
 
     /// <summary>
-    /// Used to enable change login method on the consent screen.
-    /// When set to <c>true</c>, Enable change login method.
-    /// Default value is true.
-    /// When set to <c>false</c>, Disable change login method.
+    /// Used to enable change login method on the consent screen.<br/>
+    /// <br/>
+    /// When set to <c>true</c>, enable change login method. Default value is <c>true</c>.<br/>
+    /// When set to <c>false</c>, disable change login method.
     /// </summary>
     public bool EnableSwitchLoginMethod { get; set; } = true;
 
 
     /// <summary>
-    /// Used to disable auto login.
-    /// When set to <c>true</c>, Disable auto login.
-    /// When set to <c>false</c>, Enable auto login.
+    /// Used to disable auto login.<br/>
+    /// <br/>
+    /// When set to <c>true</c>, disable auto login.<br/>
+    /// When set to <c>false</c>, enable auto login.
     /// </summary>
     public bool DisableAutoLogin { get; set; }
     #endregion
