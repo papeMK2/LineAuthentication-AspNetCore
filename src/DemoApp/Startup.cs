@@ -45,7 +45,7 @@ namespace DemoApp
                     opts.ClientSecret = Configuration["Authentication:Line:AppSecret"];
 
                     opts.Prompt = true;
-                    opts.BotPromptMode = BotPromptMode.Aggressive;
+                    opts.BotPrompt = BotPrompt.Aggressive;
                     opts.UseQRLogin = true;
                     opts.DisableAutoLogin = true;
                     opts.EnableSwitchLoginMethod = false;

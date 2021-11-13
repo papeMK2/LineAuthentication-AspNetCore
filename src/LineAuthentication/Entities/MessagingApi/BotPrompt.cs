@@ -7,7 +7,7 @@ namespace LineAuthentication.Entities.MessagingApi;
 /// <summary>
 /// Option to add an official LINE account 
 /// </summary>
-public enum BotPromptMode
+public enum BotPrompt
 {
     /// <summary>
     /// Doesn't display the add friend option on the consent screen.
@@ -28,22 +28,22 @@ public enum BotPromptMode
 
 
 /// <summary>
-/// Provides <see cref="BotPromptMode"/> extension methods.
+/// Provides <see cref="BotPrompt"/> extension methods.
 /// </summary>
-internal static class BotPromptModeExtensions
+internal static class BotPromptExtensions
 {
     /// <summary>
     /// Convert to 'bot_prompt' option value string.
     /// </summary>
-    /// <param name="mode"></param>
+    /// <param name="prompt"></param>
     /// <returns></returns>
     /// <exception cref="ArgumentOutOfRangeException"></exception>
-    public static string ToOptionString(this BotPromptMode mode)
-        => mode switch
+    public static string ToOptionString(this BotPrompt prompt)
+        => prompt switch
         {
-            BotPromptMode.None => string.Empty,
-            BotPromptMode.Normal => "normal",
-            BotPromptMode.Aggressive => "aggressive",
-            _ => throw new ArgumentOutOfRangeException(nameof(mode)),
+            BotPrompt.None => string.Empty,
+            BotPrompt.Normal => "normal",
+            BotPrompt.Aggressive => "aggressive",
+            _ => throw new ArgumentOutOfRangeException(nameof(prompt)),
         };
 }

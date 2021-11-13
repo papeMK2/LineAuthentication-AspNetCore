@@ -28,7 +28,7 @@ public class LineOAuthOptions : OAuthOptions
     /// When set to <c>Normal</c>, display the add friend option on the consent screen.<br/>
     /// When set to <c>Aggressive</c>, display the add friend option after the consent screen.
     /// </summary>
-    public BotPromptMode BotPromptMode { get; set; }
+    public BotPrompt BotPrompt { get; set; }
 
 
     /// <summary>
