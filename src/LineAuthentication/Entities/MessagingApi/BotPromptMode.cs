@@ -10,12 +10,17 @@ namespace LineAuthentication.Entities.MessagingApi;
 public enum BotPromptMode
 {
     /// <summary>
-    /// Display the Add Friend option on the consent screen.
+    /// Doesn't display the add friend option on the consent screen.
     /// </summary>
-    Normal = 0,
+    None = 0,
 
     /// <summary>
-    /// Display the Add Friends option after the consent screen
+    /// Display the add friend option on the consent screen.
+    /// </summary>
+    Normal,
+
+    /// <summary>
+    /// Display the add friend option after the consent screen
     /// </summary>
     Aggressive,
 }
@@ -36,6 +41,7 @@ internal static class BotPromptModeExtensions
     public static string ToOptionString(this BotPromptMode mode)
         => mode switch
         {
+            BotPromptMode.None => string.Empty,
             BotPromptMode.Normal => "normal",
             BotPromptMode.Aggressive => "aggressive",
             _ => throw new ArgumentOutOfRangeException(nameof(mode)),

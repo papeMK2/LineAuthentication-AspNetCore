@@ -22,20 +22,11 @@ public class LineOAuthOptions : OAuthOptions
 
 
     /// <summary>
-    /// Display the option to add the official LINE account when the user login
-    /// 
-    /// When set to <c>true</c>, Display the Add Friend option on the consent screen.
-    /// Use the mode set to BotPromptMode.The default value is normal.
-    /// When set to <c>false</c>, Don't display the Add Friend option on the  consent screen.
-    /// </summary>
-    public bool BotPrompt { get; set; }
-
-
-    /// <summary>
-    /// Option to add an official LINE account
-    /// 
-    /// When set to <c>Normal</c>, display the Add Friend option on the consent screen
-    /// When set to <c>Aggressive</c>, display the Add Friends option after the consent screen
+    /// Display the option to add the official LINE account when the user login.<br/>
+    /// <br/>
+    /// When set to <c>None</c>, doesn't display the add friend option on the consent screen.<br/>
+    /// When set to <c>Normal</c>, display the add friend option on the consent screen.<br/>
+    /// When set to <c>Aggressive</c>, display the add friend option after the consent screen.
     /// </summary>
     public BotPromptMode BotPromptMode { get; set; }
 
