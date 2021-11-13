@@ -46,7 +46,7 @@ namespace DemoApp
 
                     opts.Prompt = true;
                     opts.BotPrompt = true;
-                    opts.BotPromptMode = BotPromptModel.Aggressive;
+                    opts.BotPromptMode = BotPromptMode.Aggressive;
                     opts.UseQRLogin = true;
                     opts.DisableAutoLogin = true;
                     opts.EnableSwitchLoginMethod = false;
