@@ -32,7 +32,7 @@ public class LineOAuthOptions : OAuthOptions
 
 
     /// <summary>
-    /// Option to add an official LINE account 
+    /// Option to add an official LINE account
     /// 
     /// When set to <c>Normal</c>, display the Add Friend option on the consent screen
     /// When set to <c>Aggressive</c>, display the Add Friends option after the consent screen
@@ -52,7 +52,7 @@ public class LineOAuthOptions : OAuthOptions
     /// Used to enable change login method on the consent screen.
     /// When set to <c>true</c>, Enable change login method.
     /// Default value is true.
-    /// When set to <c>false</c>, Dissable change login method.
+    /// When set to <c>false</c>, Disable change login method.
     /// </summary>
     public bool EnableSwitchLoginMethod { get; set; } = true;
 
