@@ -95,7 +95,7 @@ public class LineOAuthHandler : OAuthHandler<LineOAuthOptions>
             ["prompt"] = this.Options.Prompt ? "consent" : string.Empty,
             ["bot_prompt"] = this.Options.BotPrompt.ToOptionString(),
             ["initial_amr_display"] = this.Options.UseQRLogin ? "lineqr" : "",
-            ["disable_auto_login"] = this.Options.DisableAutoLogin ? "true" : "false",
+            ["disable_auto_login"] = this.Options.EnableAutoLogin ? "false" : "true",
             ["switch_amr"] = this.Options.EnableSwitchLoginMethod ? "true" : "false",
         };
         return QueryHelpers.AddQueryString(this.Options.AuthorizationEndpoint, queryString!);

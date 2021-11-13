@@ -51,12 +51,12 @@ public class LineOAuthOptions : OAuthOptions
 
 
     /// <summary>
-    /// Used to disable auto login.<br/>
+    /// Used to enable auto login.<br/>
     /// <br/>
-    /// When set to <c>true</c>, disable auto login.<br/>
-    /// When set to <c>false</c>, enable auto login.
+    /// When set to <c>true</c>, enable auto login.<br/>
+    /// When set to <c>false</c>, disable auto login.
     /// </summary>
-    public bool DisableAutoLogin { get; set; }
+    public bool EnableAutoLogin { get; set; } = true;
     #endregion
 
 

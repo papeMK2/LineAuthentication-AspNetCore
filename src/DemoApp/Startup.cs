@@ -47,7 +47,7 @@ namespace DemoApp
                     opts.Prompt = true;
                     opts.BotPrompt = BotPrompt.Aggressive;
                     opts.UseQRLogin = true;
-                    opts.DisableAutoLogin = true;
+                    opts.EnableAutoLogin = false;
                     opts.EnableSwitchLoginMethod = false;
                 });
             services.AddControllersWithViews();
