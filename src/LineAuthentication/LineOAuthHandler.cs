@@ -94,7 +94,9 @@ public class LineOAuthHandler : OAuthHandler<LineOAuthOptions>
             ["state"] = this.Options.StateDataFormat.Protect(properties),
             ["prompt"] = this.Options.Prompt ? "consent" : string.Empty,
             ["bot_prompt"] = this.Options.BotPrompt ? this.Options.BotPromptMode.GetLabel() ?? "": "",
-            ["initial_amr_display"] = this.Options.UseQRLogin ? "lineqr" : ""
+            ["initial_amr_display"] = this.Options.UseQRLogin ? "lineqr" : "",
+            ["disable_auto_login"] = this.Options.DisableAutoLogin ? "true" : "false",
+            ["switch_amr"] = this.Options.EnableSwitchLoginMethod ? "true" : "false",
         };
         return QueryHelpers.AddQueryString(this.Options.AuthorizationEndpoint, queryString!);
     }
