@@ -1,0 +1,19 @@
+{
+    "Logging": {
+        "LogLevel": {
+            "Default": "Information",
+            "Microsoft.AspNetCore": "Warning"
+        }
+    },
+    "Authentication": {
+        "Line": {
+            "AppId": "Your LINE App Id",
+            "AppSecret": "Your LINE App Secret"
+        },
+        "Twitter": {
+            "ConsumerKey": "Your twitter consumer key",
+            "ConsumerSecret": "Your twitter consumer secret"
+        }
+    },
+    "AllowedHosts": "*"
+}
