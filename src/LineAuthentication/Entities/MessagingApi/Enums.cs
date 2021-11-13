@@ -8,7 +8,7 @@ namespace LineAuthentication.Entities.MessagingApi;
 /// <summary>
 /// Option to add an official LINE account 
 /// </summary>
-public enum BotPromptModel
+public enum BotPromptMode
 {
     /// <summary>
     /// Display the Add Friend option on the consent screen.
