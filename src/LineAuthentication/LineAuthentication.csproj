@@ -46,5 +46,9 @@
         <PackagePath>\</PackagePath>
       </None>
     </ItemGroup>
+    
+    <ItemGroup>
+      <PackageReference Include="FastEnum" Version="1.7.0" />
+    </ItemGroup>
 
 </Project>

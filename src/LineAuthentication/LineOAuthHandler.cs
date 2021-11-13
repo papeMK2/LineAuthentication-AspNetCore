@@ -4,6 +4,7 @@ using System.Net.Http;
 using System.Security.Claims;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
+using FastEnumUtility;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.OAuth;
 using Microsoft.AspNetCore.WebUtilities;
@@ -92,6 +93,8 @@ public class LineOAuthHandler : OAuthHandler<LineOAuthOptions>
             ["scope"] = this.FormatScope(),
             ["state"] = this.Options.StateDataFormat.Protect(properties),
             ["prompt"] = this.Options.Prompt ? "consent" : string.Empty,
+            ["bot_prompt"] = this.Options.BotPrompt ? this.Options.BotPromptMode.GetLabel() ?? "": "",
+            ["initial_amr_display"] = this.Options.UseQRLogin ? "lineqr" : ""
         };
         return QueryHelpers.AddQueryString(this.Options.AuthorizationEndpoint, queryString!);
     }

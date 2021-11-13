@@ -1,4 +1,5 @@
 ﻿using System.Security.Claims;
+using LineAuthentication.Entities.MessagingApi;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.OAuth;
 
@@ -18,6 +19,29 @@ public class LineOAuthOptions : OAuthOptions
     /// </summary>
     public bool Prompt { get; set; }
 
+    /// <summary>
+    /// Display the option to add the official LINE account when the user logs in
+    /// 
+    /// When set to <c>true</c>, Display the Add Friend option on the consent screen.
+    /// Use the mode set to BotPromptMode.The default value is normal.
+    /// When set to <c>false</c>, Don't display the Add Friend option on the  consent screen.
+    /// </summary>
+    public bool BotPrompt { get; set; }
+
+    /// <summary>
+    /// Option to add an official LINE account 
+    /// 
+    /// When set to <c>Normal</c>, display the Add Friend option on the consent screen
+    /// When set to <c>Aggressive</c>, display the Add Friends option after the consent screen
+    /// </summary>
+    public BotPromptModel BotPromptMode { get; set;} = BotPromptModel.Normal;
+
+    /// <summary>
+    /// Used to set the QR code login as the default login method.
+    /// When set to <c>true</c>, Default login method is set to QR Code
+    /// When set to <c>false</c>, Default login method is set to Email and Password.
+    /// </summary>
+    public bool UseQRLogin { get; set;}
 
     /// <summary>
     /// Initializes a new <see cref="LineOAuthOptions"/>.
