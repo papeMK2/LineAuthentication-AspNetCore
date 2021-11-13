@@ -1,5 +1,5 @@
 ﻿using System.Security.Claims;
-using LineAuthentication.Entities.MessagingApi;
+using LineAuthentication.MessagingApi;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.OAuth;
 

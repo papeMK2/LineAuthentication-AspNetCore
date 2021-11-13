@@ -1,6 +1,6 @@
 ﻿using DemoApp.Data;
 using LineAuthentication;
-using LineAuthentication.Entities.MessagingApi;
+using LineAuthentication.MessagingApi;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;

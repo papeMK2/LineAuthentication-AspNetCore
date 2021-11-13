@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LineAuthentication.Entities.MessagingApi;
+namespace LineAuthentication.MessagingApi;
 
 
 
