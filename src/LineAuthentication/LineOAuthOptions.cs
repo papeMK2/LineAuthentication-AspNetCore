@@ -20,7 +20,7 @@ public class LineOAuthOptions : OAuthOptions
     public bool Prompt { get; set; }
 
     /// <summary>
-    /// Display the option to add the official LINE account when the user logs in
+    /// Display the option to add the official LINE account when the user login
     /// 
     /// When set to <c>true</c>, Display the Add Friend option on the consent screen.
     /// Use the mode set to BotPromptMode.The default value is normal.
@@ -42,6 +42,21 @@ public class LineOAuthOptions : OAuthOptions
     /// When set to <c>false</c>, Default login method is set to Email and Password.
     /// </summary>
     public bool UseQRLogin { get; set;}
+
+    /// <summary>
+    /// Used to enable change login method on the consent screen.
+    /// When set to <c>true</c>, Enable change login method.
+    /// Default value is true.
+    /// When set to <c>false</c>, Dissable change login method.
+    /// </summary>
+    public bool EnableSwitchLoginMethod { get; set; } = true;
+
+    /// <summary>
+    /// Used to disable auto login.
+    /// When set to <c>true</c>, Disable auto login.
+    /// When set to <c>false</c>, Enable auto login.
+    /// </summary>
+    public bool DisableAutoLogin { get; set; }
 
     /// <summary>
     /// Initializes a new <see cref="LineOAuthOptions"/>.
