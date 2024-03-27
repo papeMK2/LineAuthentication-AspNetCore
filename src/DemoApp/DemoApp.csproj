@@ -2,8 +2,6 @@
 
     <PropertyGroup>
         <TargetFramework>net8</TargetFramework>
-        <LangVersion>12.0</LangVersion>
-        <Nullable>enable</Nullable>
         <UserSecretsId>aspnet-DemoApp-F1720926-1719-441D-9C75-26FD8557FADC</UserSecretsId>
     </PropertyGroup>
 
