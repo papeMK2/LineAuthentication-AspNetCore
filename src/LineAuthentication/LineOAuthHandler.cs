@@ -26,9 +26,11 @@ namespace LineAuthentication;
 public class LineOAuthHandler : OAuthHandler<LineOAuthOptions>
 {
     /// <inheritdoc />
+#pragma warning disable CS0618
     public LineOAuthHandler(IOptionsMonitor<LineOAuthOptions> options, ILoggerFactory logger, UrlEncoder encoder, ISystemClock clock)
         : base(options, logger, encoder, clock)
     { }
+#pragma warning restore CS0618
 
 
     /// <inheritdoc />
