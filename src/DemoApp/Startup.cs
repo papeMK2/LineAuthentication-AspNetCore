@@ -41,8 +41,8 @@ namespace DemoApp
                 })
                 .AddLine(opts =>
                 {
-                    opts.ClientId = Configuration["Authentication:Line:AppId"];
-                    opts.ClientSecret = Configuration["Authentication:Line:AppSecret"];
+                    opts.ClientId = Configuration["Authentication:Line:AppId"]!;
+                    opts.ClientSecret = Configuration["Authentication:Line:AppSecret"]!;
 
                     opts.Prompt = true;
                     opts.BotPrompt = BotPrompt.Aggressive;
