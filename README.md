@@ -4,7 +4,7 @@ LineAuthentication provides [LINE](https://line.me/) authentication like Twitter
 
 ## Support Platforms
 
-- .NET 6+
+- .NET 8+
 
 
 
