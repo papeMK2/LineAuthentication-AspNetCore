@@ -1,14 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>net8.0;net9.0</TargetFrameworks>
+        <TargetFrameworks>net8.0;net9.0;net10.0</TargetFrameworks>
     </PropertyGroup>
 
     <PropertyGroup>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <IsPackable>true</IsPackable>
         <PackageId>LineAuthentication</PackageId>
-        <Version>2.1.0.0</Version>
+        <Version>2.2.0.0</Version>
         <Description>ASP.NET Core security middleware enabling LINE authentication. Supports LINE Profile+.</Description>
         <PackageProjectUrl>https://github.com/papeMK2/LineAuthentication-AspNetCore</PackageProjectUrl>
         <PackageTags>LINE, OpenID, OAuth, AspNetCore, Authentication, Security</PackageTags>
