@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
     <PropertyGroup>
-        <TargetFramework>net9.0</TargetFramework>
+        <TargetFramework>net10.0</TargetFramework>
         <UserSecretsId>aspnet-DemoApp-F1720926-1719-441D-9C75-26FD8557FADC</UserSecretsId>
     </PropertyGroup>
 
